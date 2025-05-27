@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="stylesheet" href="framework7/css/framework7.min.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/app.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Status bar overlay for fullscreen mode-->
+        <div class="statusbar"></div>
+
+        <!-- Left panel with reveal effect when hidden -->
+        <div class="panel panel-left panel-reveal">
+            <div class="view view-left">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="title">Меню</div>
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block-title">Навигация в панела</div>
+                        <div class="list links-list">
+                            <ul>
+                                <li><a href="/about/">Относно</a></li>
+                                <li><a href="/help/">Помощ</a></li>
+                            </ul>
+                        </div>
+                        <div class="block-title">Навигация в тялото на документа</div>
+                        <div class="list links-list">
+                            <ul>
+                                <li><a href="/about/" data-view=".view-main" class="panel-close">Относно</a></li>
+                                <li><a href="/help/" data-view=".view-main" class="panel-close">Помощ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right panel with cover effect -->
+
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main safe-areas">
+            <!-- Page, data-name contains page name which can be used in callbacks -->
+            <div class="page" data-name="home">
+                <!-- Top Navbar -->
+
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only panel-open" data-panel="left">
+                                <i class="icon f7-icons ios-only">menu</i>
+                                <i class="icon material-icons md-only">menu</i>
+                            </a>
+                        </div>
+                        <div class="title sliding">Sensors</div>
+
+                    </div>
+                </div>
+                <!-- Toolbar-->
+
+                <!-- Scrollable page content-->
+                <div class="page-content">
+
+                    <div class="block">
+
+                        <div class="sensor">
+                            <p class="title text-color-black">
+                                Акселерометър
+                            </p>
+                            <p class="accelerometer-data text-color-blue">
+                            </p>
+                            <p class="device-orientation text-color-green">
+                            </p>
+                            <p class="accelerometer-error text-color-red">
+                            </p>
+                        </div>
+
+                        <div class="sensor">
+                            <p class="title text-color-black">
+                                Компас
+                            </p>
+                            <p class="compass-data text-color-blue">
+                            </p>
+                            <p class="compass-error text-color-red">
+                            </p>
+                        </div>
+
+                        <div class="sensor">
+                            <p class="title text-color-black">
+                                GPS приемник
+                            </p>
+                            <p class="gps-data text-color-blue">
+                            </p>
+                            <p class="address text-color-blue">
+                                </p>
+                            <p class="gps-error text-color-red">
+                                <div class="iframe-container">
+                                    <div id="map" style="height:30vh;"></div>
+                                </div>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Framework7 library -->
+    <script src="framework7/js/framework7.min.js"></script>
+    <!-- Monaca JS library -->
+    <script src="components/loader.js"></script>
+    <!-- App routes -->
+    <script src="js/routes.js"></script>
+    <!-- Your custom app scripts -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
